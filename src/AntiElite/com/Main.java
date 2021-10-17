@@ -7,28 +7,15 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Scanner scanner = new Scanner(System.in);
-        try {
+        Car car = new Car();
+        Bicycle bicycle = new Bicycle();
+        Boat boat = new Boat();
+        Skateboard skateboard = new Skateboard();
 
+        Vehicle[] racers = {car,bicycle,boat,skateboard};
 
-            System.out.println("Enter a whole number to divide: ");
-            int x = scanner.nextInt();
-
-            System.out.println("Enter a whole number to divide by : ");
-            int y = scanner.nextInt();
-
-            int z = x / y;
-
-            System.out.println("Result: " + z);
-
-        } catch (ArithmeticException e) {
-            System.out.println("You cant divide by zero dummy!");
-        } catch(InputMismatchException e){
-            System.out.println("Please enter a number !! ");
-        } catch(Exception e){
-            System.out.println("Something went wrong");
-        }finally {
-            scanner.close();
+        for(Vehicle x : racers) {
+            x.go();
         }
 
 
